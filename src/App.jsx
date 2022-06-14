@@ -30,8 +30,10 @@ function LogIn({login}) {
                     <label htmlFor="exampleInputPassword1">Password</label>
                     <input type="password" className="form-control" id="password" placeholder="Password"/>
                 </div>
+                <Link to="/welcome">
                 <button className="btn btn-primary login-element" onClick={performLogin}>Login</button>
-            </form>
+                </Link>
+                </form>
         </div>
     )
 
