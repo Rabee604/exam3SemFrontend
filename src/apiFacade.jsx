@@ -39,6 +39,78 @@ function apiFacade() {
             // .then(res => ())
 
     }
+    const  allShows = async ()=>{
+        return await fetch( URL + "/api/info/show")
+            .then(handleHttpErrors)
+    }
+    const  allGuest = async ()=>{
+        return await fetch( URL + "/api/info/allGuest")
+            .then(handleHttpErrors)
+    }
+
+    const  allFestival = async ()=>{
+        return await fetch( URL + "/api/info/allFestival")
+            .then(handleHttpErrors)
+    }
+
+
+
+    const getMyShows = async(guestName) => {
+
+        return await fetch(URL + "/api/info/guestShow/" + guestName)
+            .then(handleHttpErrors)
+    }
+    const createGuest = (name,phone,email,status) => {
+        const options = makeOptions("POST", false,
+            {name: name,
+                phone: phone,
+                email: email,
+                status: status});
+        return fetch(URL + "/api/info/createGuest", options)
+
+    }
+    const createFestival = ( name, city, startDate, duration) => {
+        const options = makeOptions("POST", false,
+            {name: name,
+                city: city,
+                startDate: startDate,
+                duration: duration});
+        return fetch(URL + "/api/info/createFestival", options)
+
+    }
+    const editFestival = ( festivalName, cityName, startDate, duration) => {
+        const options = makeOptions("POST", false,
+            {festivalName: festivalName,
+                cityName: cityName,
+                startDate: startDate,
+                duration: duration});
+        return fetch(URL + "/api/info/edit", options)
+
+    }
+
+    const createAShow = ( name, duration, location,startDate, startTime) => {
+        const options = makeOptions("POST", false,
+            {name: name,
+                duration: duration,
+                location: location,
+                startDate: startDate,
+                startTime: startTime});
+        return fetch(URL + "/api/info/createShow", options)
+
+    }
+    const deleteShow = async (id) => {
+        const options = makeOptions("POST", false,{id: id});
+        return fetch(URL + "/api/info/delete",options)
+
+    }
+
+    const setShow = async (showName,guestName) => {
+        const options = makeOptions("POST", false,{showName: showName,
+            guestName: guestName});
+        return fetch(URL + "/api/info/setShow",options)
+
+    }
+
 
     const login = (user, password) => {
         const options = makeOptions("POST", true,{username: user, password: password });
@@ -86,7 +158,17 @@ function apiFacade() {
         fetchData,
         getRoles,
         getJokes,
-        getName
+        getName,
+        allShows,
+        getMyShows,
+        allGuest,
+        createGuest,
+        createFestival,
+        createAShow,
+        deleteShow,
+        setShow,
+        editFestival,
+        allFestival
     }
 }
 

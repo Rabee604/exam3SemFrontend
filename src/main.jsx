@@ -10,6 +10,14 @@ import UserPage from "./routes/userPage";
 import AdminPage from "./routes/adminPage";
 import ApiFacade from "./apiFacade";
 import Jokes from "./routes/jokes";
+import GetAllShows from "./routes/GetAllShows";
+import GetMyShows from "./routes/GetMyShows";
+import CreatGuest from "./routes/CreatGuest";
+import CreateFestival from "./routes/CreateFestival";
+import CreateShow from "./routes/CreateShow";
+import DeleteShow from "./routes/DeleteShow";
+import SetShow from "./routes/SetShow";
+import EditFestival from "./routes/EditFestival";
 
 
 
@@ -22,6 +30,14 @@ render(
                 <Route path="/userpage" element={<UserPage/>}/>
                 <Route path="/adminpage" element={<AdminPage/>}/>
                 <Route path="/jokes" element={<Jokes/>}/>
+                <Route path="/getAllShows" element={<GetAllShows/>}/>
+                <Route path="/getMyShows" element={<GetMyShows/>}/>
+                <Route path="/createGuest" element={<CreatGuest/>}/>
+                <Route path="/createFestival" element={<CreateFestival/>}/>
+                <Route path="/createShow" element={<CreateShow/>}/>
+                <Route path="/DeleteShow" element={<DeleteShow/>}/>
+                <Route path="/SetShow" element={<SetShow/>}/>
+                <Route path="/EditFestival" element={<EditFestival/>}/>
             </Route>
         </Routes>
     </BrowserRouter>,
